@@ -13,6 +13,9 @@ app.use(express.static('/public'));
 
 app.use(homeRouter);
 
+// Database Instance
+require('./models');
+
 app.listen(PORT, () => {
     console.log(`Server launched on ${PORT} ${NODE_ENV}`);
 });

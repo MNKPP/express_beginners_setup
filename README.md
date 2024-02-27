@@ -16,7 +16,10 @@ npm start
 
 ## Dependencies
 
+- express
+- express-session
+- morgan
+- mongoose
 - nodemon
 - ejs
-- express
 - dotenv
