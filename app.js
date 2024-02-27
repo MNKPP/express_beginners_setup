@@ -5,7 +5,7 @@ const morgan = require('morgan');
 
 const app = express();
 const { NODE_ENV, PORT, SECRET_SESSION} = process.env;
-const homeRouter = require('./routes/home.route.js');
+const { homeRouter } = require('./routes/index');
 
 app.set('views', './views');
 app.set('view engine', "ejs");
@@ -19,10 +19,9 @@ app.use(session({
     saveUninitialized: true
 }));
 
+app.use(morgan('tiny'));
 
 app.use(homeRouter);
-
-app.use(morgan('tiny'));
 
 // Database Instance
 require('./models');
